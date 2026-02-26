@@ -1,43 +1,76 @@
+/* ——— Background: Light Blue Gingham Picnic Blanket ——— */
 body {
-  background: #f9f4ef;
-  font-family: "Georgia", serif;
-  color: #4a3f35;
   margin: 0;
   padding: 40px 20px;
+  font-family: "Georgia", serif;
+  color: #3b3b3b;
+
+  /* light blue gingham pattern */
+  background-color: #cfe8ff;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.55) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255,0.55) 50%, transparent 50%);
+  background-size: 40px 40px;
 }
 
+
+/* ——— Main Diary Page (White Card with Lace Border) ——— */
 .container {
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
   background: #ffffff;
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 18px;
+  position: relative;
+
+  /* soft shadow so it feels like a card on a blanket */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
+/* lace border effect */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 26px;
+  border: 2px dashed #d9e4ff;
+  box-shadow: 0 0 0 10px #f7f8ff;
+  pointer-events: none;
+}
+
+
+/* ——— Title + Subtitle ——— */
 h1 {
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 5px;
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+  color: #3b3b3b;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 1rem;
-  color: #7a6f66;
+  font-size: 1.05rem;
+  color: #6b6b6b;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
+
+/* ——— Diary Entry Styling ——— */
 .entry {
-  background: #fff7f0;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px dashed #e0c7b8;
-  margin-bottom: 20px;
+  background: #fdfbff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #e4e0ff;
+  margin-top: 24px;
 }
 
 .entry h2 {
   margin-top: 0;
   font-size: 1.4rem;
-  color: #6b4f3f;
+  color: #6b4f8a;
+}
+
+.entry p {
+  line-height: 1.6;
 }
