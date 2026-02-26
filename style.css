@@ -1,11 +1,14 @@
-/* ——— Background: Light Blue Gingham Picnic Blanket ——— */
+/* ——— Import Typewriter Font (Cutive Mono) ——— */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+
+/* ——— Light Blue Gingham Picnic Blanket Background ——— */
 body {
   margin: 0;
   padding: 40px 20px;
-  font-family: "Georgia", serif;
+  font-family: "Cutive Mono", monospace;
   color: #3b3b3b;
 
-  /* light blue gingham pattern */
   background-color: #cfe8ff;
   background-image:
     linear-gradient(90deg, rgba(255,255,255,0.55) 50%, transparent 50%),
@@ -14,28 +17,33 @@ body {
 }
 
 
-/* ——— Main Diary Page (White Card with Lace Border) ——— */
+/* ——— Main Diary Page (White Card with Scalloped Lace Border) ——— */
 .container {
   max-width: 720px;
   margin: auto;
   background: #ffffff;
   padding: 40px;
-  border-radius: 18px;
+  border-radius: 20px;
   position: relative;
-
-  /* soft shadow so it feels like a card on a blanket */
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* lace border effect */
+/* scalloped lace border */
 .container::before {
   content: "";
   position: absolute;
-  inset: -16px;
-  border-radius: 26px;
-  border: 2px dashed #d9e4ff;
-  box-shadow: 0 0 0 10px #f7f8ff;
+  inset: -22px;
+  border-radius: 28px;
   pointer-events: none;
+
+  background:
+    radial-gradient(circle at top left, white 60%, transparent 61%) -12px -12px/24px 24px repeat,
+    radial-gradient(circle at top right, white 60%, transparent 61%) 12px -12px/24px 24px repeat,
+    radial-gradient(circle at bottom left, white 60%, transparent 61%) -12px 12px/24px 24px repeat,
+    radial-gradient(circle at bottom right, white 60%, transparent 61%) 12px 12px/24px 24px repeat;
+
+  box-shadow: 0 0 0 12px #ffffff;
+  z-index: -1;
 }
 
 
@@ -50,9 +58,11 @@ h1 {
 .subtitle {
   text-align: center;
   font-size: 1.05rem;
-  color: #6b6b6b;
+  color: #4b4b4b;
   margin-bottom: 40px;
   line-height: 1.6;
+  letter-spacing: 0.4px;
+  text-shadow: 0.5px 0.5px 0 #eaeaea; /* soft ink effect */
 }
 
 
@@ -73,4 +83,6 @@ h1 {
 
 .entry p {
   line-height: 1.6;
+  letter-spacing: 0.4px;
+  text-shadow: 0.5px 0.5px 0 #eaeaea; /* typewriter ink */
 }
